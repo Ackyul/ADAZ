@@ -105,7 +105,7 @@ const ProductModal = ({ product, onClose }) => {
                 <div
                   key={size}
                   className={`w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 flex items-center justify-center font-bold text-base md:text-lg ${
-                    size !== 40 
+                    !(size === 40 && selectedGender === 'WM')
                       ? 'border-brand-200 bg-brand-50 text-brand-300 opacity-50 relative overflow-hidden before:absolute before:inset-0 before:border-b-2 before:border-brand-200 before:rotate-45 before:-translate-y-1'
                       : 'border-brand-900 bg-brand-900 text-white shadow-md'
                   }`}
