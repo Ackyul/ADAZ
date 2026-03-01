@@ -35,6 +35,11 @@ const ItemCard = ({ data, onClick }) => {
           {data.description}
         </p>
         
+        
+        <p className="text-brand-500 font-bold text-xs uppercase tracking-widest mb-4">
+          Unisex
+        </p>
+
         <div className="mt-auto pt-4 flex items-center justify-between border-t border-brand-200/60">
           <span className="text-brand-700 text-sm font-bold tracking-wide group-hover:text-brand-900 transition-colors">
             Ver Detalles
