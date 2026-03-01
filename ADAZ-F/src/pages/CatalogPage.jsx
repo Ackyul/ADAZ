@@ -11,14 +11,6 @@ const SNEAKERS_DATA = [
     description: 'El icónico diseño a cuadros. Estilo indiscutible y comodidad para todo el día.',
     image: '/assets/vans-asher.png',
     price: '150'
-  },
-  {
-    id: 2,
-    name: 'ASHER-M',
-    category: 'Skate Classic',
-    description: 'El icónico diseño a cuadros. Estilo indiscutible y comodidad para todo el día.',
-    image: '/assets/asher-m.png',
-    price: '150'
   }
 ];
 
