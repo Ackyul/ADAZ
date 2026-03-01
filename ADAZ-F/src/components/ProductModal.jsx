@@ -93,17 +93,6 @@ const ProductModal = ({ product, onClose }) => {
             )}
           </div>
 
-          <button 
-            className={`w-full text-white flex items-center justify-center gap-3 py-5 rounded-full font-bold text-lg transition-all transform ${
-              selectedSize 
-                ? 'bg-brand-900 hover:bg-brand-800 shadow-lg hover:shadow-xl hover:-translate-y-1' 
-                : 'bg-brand-300 cursor-not-allowed opacity-70'
-            }`}
-            disabled={!selectedSize}
-          >
-            <ShoppingBag size={20} />
-            {selectedSize ? 'Añadir a la Bolsa' : 'Elige una Talla'}
-          </button>
         </div>
 
       </div>
