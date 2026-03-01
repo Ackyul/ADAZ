@@ -37,7 +37,7 @@ const ItemCard = ({ data, onClick }) => {
         
         
         <p className="text-brand-500 font-bold text-xs uppercase tracking-widest mb-4">
-          Unisex (MN - WM)
+          Unisex
         </p>
 
         <div className="mt-auto pt-4 flex items-center justify-between border-t border-brand-200/60">
