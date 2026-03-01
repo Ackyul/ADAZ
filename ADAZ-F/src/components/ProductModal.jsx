@@ -87,10 +87,6 @@ const ProductModal = ({ product, onClose }) => {
                   {size}
                 </button>
               ))}
-            </div>
-            {!selectedSize && (
-               <p className="text-sm text-red-500 font-medium mt-3 opacity-80">* Por favor selecciona una talla</p>
-            )}
           </div>
 
         </div>
