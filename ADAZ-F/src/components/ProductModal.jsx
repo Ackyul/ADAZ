@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShoppingBag } from 'lucide-react';
 
 const SIZES = [38, 39, 40, 41, 42, 43, 44];
 
 const ProductModal = ({ product, onClose }) => {
+  const [selectedGender, setSelectedGender] = useState('MN');
 
   useEffect(() => {
     if (product) {
@@ -63,6 +64,35 @@ const ProductModal = ({ product, onClose }) => {
           <p className="text-brand-700/90 text-sm md:text-lg mb-6 leading-relaxed font-medium">
             {product.description}
           </p>
+          
+          {/* Gender Selector */}
+          <div className="mb-6">
+            <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
+              <span>Género</span>
+            </h4>
+            <div className="inline-flex bg-brand-50 p-1.5 rounded-full border border-brand-200 shadow-inner">
+              <button
+                onClick={() => setSelectedGender('MN')}
+                className={`flex-1 px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                  selectedGender === 'MN' 
+                    ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
+                    : 'text-brand-600 hover:text-brand-900 transparent'
+                }`}
+              >
+                MN
+              </button>
+              <button
+                onClick={() => setSelectedGender('WM')}
+                className={`flex-1 px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                  selectedGender === 'WM' 
+                    ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
+                    : 'text-brand-600 hover:text-brand-900 transparent'
+                }`}
+              >
+                WM
+              </button>
+            </div>
+          </div>
           
           {/* Size Selector */}
           <div className="mb-4">
