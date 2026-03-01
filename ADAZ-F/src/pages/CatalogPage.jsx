@@ -31,7 +31,7 @@ const CatalogPage = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-8">
           {SNEAKERS_DATA.map((sneaker) => (
             <ItemCard key={sneaker.id} data={sneaker} onClick={setSelectedProduct} />
           ))}
