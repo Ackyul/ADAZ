@@ -21,9 +21,9 @@ const Home = () => {
                     <p className="text-brand-700 text-sm font-semibold tracking-widest uppercase">Únete a la vanguardia</p>
                   </div>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-6xl xl:text-[5rem] font-black tracking-tighter leading-[1.1] mb-8 drop-shadow-sm text-brand-900 uppercase pr-4 break-words hyphens-auto w-full max-w-[100%]">
+                  <h1 className="text-5xl md:text-6xl xl:text-7xl font-black tracking-tighter leading-[1.1] mb-8 drop-shadow-sm text-brand-900 uppercase">
                       Versatilidad y vanguardismo, <br/>
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-900 via-brand-600 to-brand-800 break-words">sin reglas</span>
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-900 via-brand-600 to-brand-800 pr-2 pb-1 inline-block">sin reglas</span>
                   </h1>
                   
                   <p className="text-brand-600 text-lg md:text-xl max-w-xl mb-12 leading-relaxed font-medium">
