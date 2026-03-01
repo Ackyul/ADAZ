@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ShoppingBag } from 'lucide-react';
 
 const SIZES = [38, 39, 40, 41, 42, 43, 44];
@@ -6,9 +7,18 @@ const SIZES = [38, 39, 40, 41, 42, 43, 44];
 const ProductModal = ({ product, onClose }) => {
   const [selectedSize, setSelectedSize] = useState(null);
 
+  useEffect(() => {
+    if (product) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [product]);
+
   if (!product) return null;
 
-  return (
+  const modalContent = (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
@@ -97,6 +107,9 @@ const ProductModal = ({ product, onClose }) => {
       </div>
     </div>
   );
+
+  // Use a portal to render the modal at the root level, above all other stacking contexts (headers, footers)
+  return createPortal(modalContent, document.body);
 };
 
 export default ProductModal;
