@@ -9,7 +9,7 @@ const Header = () => {
         
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center p-1 group">
-          <img src="/src/assets/logo-text.png" alt="ADAZ" className="h-6 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" />
+          <img src="/assets/logo-text.png" alt="ADAZ" className="h-6 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" />
         </Link>
 
         {/* Desktop Links */}

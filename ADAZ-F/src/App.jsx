@@ -22,13 +22,21 @@ function App() {
             <div className="max-w-7xl mx-auto px-6">
               <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-brand-200 pb-12 mb-8">
                 <div className="flex items-center gap-3">
-                    <img src="/src/assets/logo-icon.png" alt="ADAZ" className="w-8 h-8 object-contain" />
+                    <img src="/assets/logo-icon.png" alt="ADAZ" className="w-8 h-8 object-contain" />
                     <span className="font-black text-3xl tracking-tighter text-brand-900">ADAZ</span>
                 </div>
                 
                 <div className="flex gap-8 text-brand-700 font-semibold text-sm">
                     <a href="#" className="hover:text-brand-900 transition-colors">Instagram</a>
                     <a href="#" className="hover:text-brand-900 transition-colors">TikTok</a>
+                </div>
+                {/* Floating Sneaker */}
+                <div className="relative z-10 w-full aspect-square flex items-center justify-center animate-[float_6s_ease-in-out_infinite]">
+                  <img 
+                    src="/assets/shoe1.png" 
+                    alt="Signature Sneaker" 
+                    className="w-[120%] max-w-none h-auto object-contain drop-shadow-[0_45px_35px_rgba(0,0,0,0.3)] transform -rotate-12 hover:rotate-0 transition-transform duration-1000 ease-out"
+                  />
                 </div>
               </div>
               

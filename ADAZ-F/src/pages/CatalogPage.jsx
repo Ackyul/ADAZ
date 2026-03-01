@@ -8,28 +8,28 @@ const SNEAKERS_DATA = [
     name: 'AeroGlide Pro',
     category: 'Vanguard Runner',
     description: 'Ingeniería aerodinámica para una velocidad sin precedentes.',
-    image: 'C:\\Users\\USER\\.gemini\\antigravity\\brain\\a8524ce3-66ef-4ee0-a4bc-359e692f8d27\\futuristic_sneaker_1772377155563.png',
+    image: '/assets/shoe2.png',
   },
   {
     id: 2,
     name: 'Urban Stealth',
     category: 'Streetwear High-Top',
     description: 'Silueta imponente que domina el paisaje urbano moderno.',
-    image: 'C:\\Users\\USER\\.gemini\\antigravity\\brain\\a8524ce3-66ef-4ee0-a4bc-359e692f8d27\\urban_street_sneaker_1772377277153.png',
+    image: '/assets/shoe3.png',
   },
   {
     id: 3,
     name: 'Quantum Velocity',
     category: 'Hyper Athletic',
     description: 'Materiales reactivos que desafían las leyes de la física.',
-    image: 'C:\\Users\\USER\\.gemini\\antigravity\\brain\\a8524ce3-66ef-4ee0-a4bc-359e692f8d27\\modern_running_shoe_1772377511654.png',
+    image: '/assets/shoe1.png',
   },
   {
     id: 4,
     name: 'Neo Gravity',
     category: 'Concept Sneaker',
     description: 'Amortiguación que te eleva con cada paso, desafiando la gravedad.',
-    image: 'C:\\Users\\USER\\.gemini\\antigravity\\brain\\a8524ce3-66ef-4ee0-a4bc-359e692f8d27\\futuristic_sneaker_1772377155563.png',
+    image: '/assets/shoe2.png',
   }
 ];
 
