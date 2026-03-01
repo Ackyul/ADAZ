@@ -38,12 +38,12 @@ const ProductModal = ({ product, onClose }) => {
         </button>
 
         {/* Image Section */}
-        <div className="w-full md:w-1/2 bg-brand-100/30 p-8 flex items-center justify-center relative min-h-[300px]">
+        <div className="w-full md:w-1/2 bg-brand-100/30 p-6 md:p-8 flex items-center justify-center relative min-h-[220px] md:min-h-[300px] flex-shrink-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-200),transparent_70%)] opacity-60 z-0 mix-blend-multiply"></div>
           <img 
             src={product.image} 
             alt={product.name} 
-            className="relative z-10 w-full h-auto max-h-full object-contain drop-shadow-[0_20px_25px_rgba(15,43,77,0.2)]" 
+            className="relative z-10 w-full h-auto max-h-[180px] md:max-h-full object-contain drop-shadow-[0_20px_25px_rgba(15,43,77,0.2)]" 
           />
         </div>
 
@@ -52,31 +52,31 @@ const ProductModal = ({ product, onClose }) => {
           <p className="text-brand-600 text-sm font-bold tracking-[0.2em] uppercase mb-3">
             {product.category}
           </p>
-          <h2 className="text-4xl md:text-5xl font-black text-brand-900 mb-2 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-brand-900 mb-2 tracking-tight">
             {product.name}
           </h2>
           
-          <div className="text-4xl font-black text-brand-900 mb-6 flex items-start gap-1">
-            <span className="text-xl mt-1 font-bold">S/.</span> 
+          <div className="text-3xl md:text-4xl font-black text-brand-900 mb-4 flex items-start gap-1">
+            <span className="text-lg md:text-xl mt-1 font-bold">S/.</span> 
             <span>{product.price || '150'}</span>
           </div>
 
-          <p className="text-brand-700/90 text-base md:text-lg mb-8 leading-relaxed font-medium">
+          <p className="text-brand-700/90 text-sm md:text-lg mb-6 leading-relaxed font-medium">
             {product.description}
           </p>
           
           {/* Size Selector */}
-          <div className="mb-8">
-            <h4 className="text-brand-900 font-bold mb-4 flex items-center justify-between">
+          <div className="mb-4">
+            <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
               <span>Selecciona tu talla (EU)</span>
             </h4>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               {SIZES.map((size) => (
                 <button
                   key={size}
                   onClick={() => size === 40 && setSelectedSize(size)}
                   disabled={size !== 40}
-                  className={`w-12 h-12 rounded-xl border-2 flex items-center justify-center font-bold text-lg transition-all ${
+                  className={`w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 flex items-center justify-center font-bold text-base md:text-lg transition-all ${
                     size !== 40 
                       ? 'border-brand-200 bg-brand-50 text-brand-300 cursor-not-allowed opacity-50 relative overflow-hidden before:absolute before:inset-0 before:border-b-2 before:border-brand-200 before:rotate-45 before:-translate-y-1'
                       : selectedSize === size
@@ -87,6 +87,7 @@ const ProductModal = ({ product, onClose }) => {
                   {size}
                 </button>
               ))}
+            </div>
           </div>
 
         </div>
