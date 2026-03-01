@@ -39,6 +39,19 @@ const Home = () => {
                       </Link>
                   </div>
               </div>
+
+              {/* Hero Graphic */}
+              <div className="flex-1 relative w-full max-w-2xl hidden lg:flex justify-center items-center">
+                <div className="absolute inset-0 bg-brand-300/40 blur-[120px] rounded-full animate-pulse"></div>
+                {/* Floating Sneaker */}
+                <div className="relative z-10 w-full aspect-square flex items-center justify-center animate-[float_6s_ease-in-out_infinite]">
+                  <img 
+                    src="/assets/vans-asher.png" 
+                    alt="Vans Asher" 
+                    className="w-[120%] max-w-none h-auto object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.15)] transform -rotate-12 hover:rotate-0 transition-transform duration-1000 ease-out"
+                  />
+                </div>
+              </div>
           </div>
       </header>
 

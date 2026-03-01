@@ -4,24 +4,10 @@ import ItemCard from './ItemCard';
 const SNEAKERS_DATA = [
   {
     id: 1,
-    name: 'AeroGlide Pro',
-    category: 'Vanguard Runner',
-    description: 'Ingeniería aerodinámica para una velocidad sin precedentes.',
-    image: '/assets/shoe2.png',
-  },
-  {
-    id: 2,
-    name: 'Urban Stealth',
-    category: 'Streetwear High-Top',
-    description: 'Silueta imponente que domina el paisaje urbano moderno.',
-    image: '/assets/shoe3.png',
-  },
-  {
-    id: 3,
-    name: 'Quantum Velocity',
-    category: 'Hyper Athletic',
-    description: 'Materiales reactivos que desafían las leyes de la física.',
-    image: '/assets/shoe1.png',
+    name: 'Vans Asher',
+    category: 'Skate Classic',
+    description: 'El icónico diseño a cuadros. Estilo indiscutible y comodidad para todo el día.',
+    image: '/assets/vans-asher.png',
   }
 ];
 
