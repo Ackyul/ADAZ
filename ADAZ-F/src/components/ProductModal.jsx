@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShoppingBag } from 'lucide-react';
 
-const SIZES = [38, 39, 40, 41, 42, 43, 44];
+const SIZES_MN = [39, 40, 41, 42, 43, 44];
+const SIZES_WM = [35, 36, 37, 38, 39, 40];
 
 const ProductModal = ({ product, onClose }) => {
   const [selectedGender, setSelectedGender] = useState('MN');
@@ -100,7 +101,7 @@ const ProductModal = ({ product, onClose }) => {
               <span>Selecciona tu talla (EU)</span>
             </h4>
             <div className="flex flex-wrap gap-2 md:gap-3">
-              {SIZES.map((size) => (
+              {(selectedGender === 'MN' ? SIZES_MN : SIZES_WM).map((size) => (
                 <div
                   key={size}
                   className={`w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 flex items-center justify-center font-bold text-base md:text-lg ${
