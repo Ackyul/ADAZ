@@ -33,7 +33,7 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       <div 
         className={`fixed inset-0 bg-white z-40 transition-transform duration-300 ease-in-out flex flex-col items-center justify-center gap-8 ${
-          isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >
         <Link 
