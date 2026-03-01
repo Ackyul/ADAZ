@@ -14,6 +14,8 @@ const SNEAKERS_DATA = [
 ];
 
 const Catalogue = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   return (
     <section id="destacado" className="py-24 relative bg-brand-50 z-10 scroll-mt-24">
       {/* Background Decorators */}
