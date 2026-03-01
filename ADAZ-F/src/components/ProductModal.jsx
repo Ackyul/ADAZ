@@ -31,7 +31,7 @@ const ProductModal = ({ product, onClose }) => {
       ></div>
       
       {/* Modal Container */}
-      <div className="relative bg-white rounded-[2rem] overflow-hidden w-full max-w-[95%] md:max-w-5xl lg:max-w-6xl shadow-2xl flex flex-col md:flex-row transform transition-all max-h-[90vh]">
+      <div className="relative bg-white rounded-[2rem] overflow-hidden w-full max-w-lg shadow-2xl flex flex-col transform transition-all max-h-[90vh]">
         
         {/* Close Button */}
         <button 
@@ -41,84 +41,87 @@ const ProductModal = ({ product, onClose }) => {
           <X size={20} />
         </button>
 
-        {/* Image Section */}
-        <div className="w-full md:w-1/2 bg-brand-100/30 p-6 md:p-8 flex items-center justify-center relative min-h-[220px] md:min-h-[300px] flex-shrink-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-200),transparent_70%)] opacity-60 z-0 mix-blend-multiply"></div>
-          <img 
-            src={currentImage} 
-            alt={currentName} 
-            className="relative z-10 w-full h-auto max-h-[180px] md:max-h-full object-contain drop-shadow-[0_20px_25px_rgba(15,43,77,0.2)]" 
-          />
-        </div>
-
-        {/* Details Section */}
-        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center overflow-y-auto">
-          <p className="text-brand-600 text-sm font-bold tracking-[0.2em] uppercase mb-3">
-            {product.category}
-          </p>
-          <h2 className="text-3xl md:text-5xl font-black text-brand-900 mb-2 tracking-tight">
-            {currentName}
-          </h2>
-          
-          <div className="text-3xl md:text-4xl font-black text-brand-900 mb-4 flex items-start gap-1">
-            <span className="text-lg md:text-xl mt-1 font-bold">S/.</span> 
-            <span>{product.price || '150'}</span>
+        {/* Content Scroll Wrapper */}
+        <div className="overflow-y-auto">
+          {/* Image Section */}
+          <div className="w-full bg-brand-100/30 p-8 flex items-center justify-center relative min-h-[250px] md:min-h-[350px]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-200),transparent_70%)] opacity-60 z-0 mix-blend-multiply"></div>
+            <img 
+              src={currentImage} 
+              alt={currentName} 
+              className="relative z-10 w-full h-auto max-w-[280px] md:max-w-[400px] object-contain drop-shadow-[0_20px_25px_rgba(15,43,77,0.2)]" 
+            />
           </div>
 
-          <p className="text-brand-700/90 text-sm md:text-lg mb-6 leading-relaxed font-medium">
-            {product.description}
-          </p>
-          
-          {/* Gender Selector */}
-          <div className="mb-6">
-            <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
-              <span>Género</span>
-            </h4>
-            <div className="inline-flex bg-brand-50 p-1.5 rounded-full border border-brand-200 shadow-inner">
-              <button
-                onClick={() => setSelectedGender('MN')}
-                className={`flex-1 px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
-                  selectedGender === 'MN' 
-                    ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
-                    : 'text-brand-600 hover:text-brand-900 transparent'
-                }`}
-              >
-                MN
-              </button>
-              <button
-                onClick={() => setSelectedGender('WM')}
-                className={`flex-1 px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
-                  selectedGender === 'WM' 
-                    ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
-                    : 'text-brand-600 hover:text-brand-900 transparent'
-                }`}
-              >
-                WM
-              </button>
+          {/* Details Section */}
+          <div className="w-full p-8 flex flex-col">
+            <p className="text-brand-600 text-sm font-bold tracking-[0.2em] uppercase mb-2">
+              {product.category}
+            </p>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-900 mb-2 tracking-tight">
+              {currentName}
+            </h2>
+            
+            <div className="text-2xl md:text-4xl font-black text-brand-900 mb-4 flex items-start gap-1">
+              <span className="text-base md:text-xl mt-1 font-bold">S/.</span> 
+              <span>{product.price || '150'}</span>
             </div>
-          </div>
-          
-          {/* Size Selector */}
-          <div className="mb-4">
-            <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
-              <span>Selecciona tu talla (EU)</span>
-            </h4>
-            <div className="flex flex-wrap gap-2 md:gap-3">
-              {(selectedGender === 'MN' ? SIZES_MN : SIZES_WM).map((size) => (
-                <div
-                  key={size}
-                  className={`w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 flex items-center justify-center font-bold text-base md:text-lg ${
-                    !(size === 40 && selectedGender === 'WM')
-                      ? 'border-brand-200 bg-brand-50 text-brand-300 opacity-50 relative overflow-hidden before:absolute before:inset-0 before:border-b-2 before:border-brand-200 before:rotate-45 before:-translate-y-1'
-                      : 'border-brand-900 bg-brand-900 text-white shadow-md'
+
+            <p className="text-brand-700/90 text-sm md:text-base mb-8 leading-relaxed font-medium">
+              {product.description}
+            </p>
+            
+            {/* Gender Selector */}
+            <div className="mb-6">
+              <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
+                <span>Género</span>
+              </h4>
+              <div className="inline-flex bg-brand-50 p-1.5 rounded-full border border-brand-200 shadow-inner w-full md:w-auto">
+                <button
+                  onClick={() => setSelectedGender('MN')}
+                  className={`flex-1 md:flex-none px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                    selectedGender === 'MN' 
+                      ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
+                      : 'text-brand-600 hover:text-brand-900 transparent'
                   }`}
                 >
-                  {size}
-                </div>
-              ))}
+                  MN
+                </button>
+                <button
+                  onClick={() => setSelectedGender('WM')}
+                  className={`flex-1 md:flex-none px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                    selectedGender === 'WM' 
+                      ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
+                      : 'text-brand-600 hover:text-brand-900 transparent'
+                  }`}
+                >
+                  WM
+                </button>
+              </div>
             </div>
-          </div>
+            
+            {/* Size Selector */}
+            <div className="mb-2">
+              <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
+                <span>Selecciona tu talla (EU)</span>
+              </h4>
+              <div className="flex flex-wrap gap-2 md:gap-3">
+                {(selectedGender === 'MN' ? SIZES_MN : SIZES_WM).map((size) => (
+                  <div
+                    key={size}
+                    className={`w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 flex items-center justify-center font-bold text-base md:text-lg ${
+                      !(size === 40 && selectedGender === 'WM')
+                        ? 'border-brand-200 bg-brand-50 text-brand-300 opacity-50 relative overflow-hidden before:absolute before:inset-0 before:border-b-2 before:border-brand-200 before:rotate-45 before:-translate-y-1'
+                        : 'border-brand-900 bg-brand-900 text-white shadow-md'
+                    }`}
+                  >
+                    {size}
+                  </div>
+                ))}
+              </div>
+            </div>
 
+          </div>
         </div>
 
       </div>
