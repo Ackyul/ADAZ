@@ -23,7 +23,7 @@ const ItemCard = ({ data, onClick }) => {
       </div>
       
       {/* Content Container */}
-      <div className="relative z-30 flex-1 flex flex-col p-8 bg-gradient-to-b from-transparent to-white/90 -mt-12 pt-16">
+      <div className="relative z-30 flex-1 flex flex-col p-8 bg-white/95 md:bg-gradient-to-b md:from-transparent md:to-white/90 -mt-12 pt-16 rounded-b-3xl">
         <p className="text-brand-600 text-xs font-bold tracking-[0.2em] uppercase mb-2 group-hover:text-brand-800 transition-colors">
           {data.category}
         </p>
@@ -31,7 +31,7 @@ const ItemCard = ({ data, onClick }) => {
           {data.name}
         </h3>
         
-        <p className="text-brand-700/90 text-sm mb-6 flex-1 opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 transform font-medium">
+        <p className="text-brand-700 text-sm mb-6 flex-1 lg:opacity-0 lg:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 transform font-medium">
           {data.description}
         </p>
         
