@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCard from './ItemCard';
+import ProductModal from './ProductModal';
 
 const SNEAKERS_DATA = [
   {
@@ -8,6 +9,7 @@ const SNEAKERS_DATA = [
     category: 'Skate Classic',
     description: 'El icónico diseño a cuadros. Estilo indiscutible y comodidad para todo el día.',
     image: '/assets/vans-asher.png',
+    price: '150'
   }
 ];
 
@@ -27,10 +29,17 @@ const Catalogue = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
           {SNEAKERS_DATA.slice(0, 1).map((sneaker) => (
-            <ItemCard key={sneaker.id} data={sneaker} />
+            <ItemCard key={sneaker.id} data={sneaker} onClick={setSelectedProduct} />
           ))}
         </div>
       </div>
+
+      {selectedProduct && (
+        <ProductModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </section>
   );
 };

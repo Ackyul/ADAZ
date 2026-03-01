@@ -1,9 +1,11 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
-const ItemCard = ({ data }) => {
+const ItemCard = ({ data, onClick }) => {
   return (
-    <article className="group relative bg-white/60 rounded-3xl overflow-hidden cursor-pointer backdrop-blur-xl border border-white hover:border-brand-200 transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(15,43,77,0.15)] hover:-translate-y-2 flex flex-col h-full shadow-[0_10px_30px_-10px_rgba(15,43,77,0.05)]">
+    <article 
+      onClick={() => onClick && onClick(data)}
+      className="group relative bg-white hover:bg-white/80 rounded-3xl overflow-hidden cursor-pointer border border-brand-200 hover:border-brand-400 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(15,43,77,0.15)] hover:-translate-y-1 flex flex-col h-full shadow-sm p-8">
       
       {/* Image Container */}
       <div className="relative aspect-[4/3] bg-brand-100/30 flex items-center justify-center p-8 overflow-hidden rounded-t-3xl">

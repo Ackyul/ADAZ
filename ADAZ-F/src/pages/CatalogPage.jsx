@@ -1,6 +1,7 @@
 // src/pages/CatalogPage.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ItemCard from '../components/ItemCard';
+import ProductModal from '../components/ProductModal';
 
 const SNEAKERS_DATA = [
   {
@@ -9,10 +10,13 @@ const SNEAKERS_DATA = [
     category: 'Skate Classic',
     description: 'El icónico diseño a cuadros. Estilo indiscutible y comodidad para todo el día.',
     image: '/assets/vans-asher.png',
+    price: '150'
   }
 ];
 
 const CatalogPage = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   useEffect(() => {
     window.scrollTo(0, 0); // Reset scroll position when jumping to a new page
   }, []);
@@ -27,12 +31,19 @@ const CatalogPage = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {SNEAKERS_DATA.map((sneaker) => (
-            <ItemCard key={sneaker.id} data={sneaker} />
+            <ItemCard key={sneaker.id} data={sneaker} onClick={setSelectedProduct} />
           ))}
         </div>
       </div>
+
+      {selectedProduct && (
+        <ProductModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </div>
   );
 };
