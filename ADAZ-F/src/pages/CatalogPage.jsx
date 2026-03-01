@@ -46,14 +46,6 @@ const CatalogPage = () => {
             <h1 className="text-4xl md:text-5xl font-black mb-2 tracking-tight text-brand-900">El Catálogo Completo</h1>
             <p className="text-brand-600 text-lg font-medium">Explora todas nuestras colecciones sin reglas.</p>
           </div>
-          <div className="flex gap-4">
-             <button className="px-6 py-2 rounded-full border border-brand-300 bg-white/60 text-brand-900 text-sm font-semibold hover:bg-white hover:shadow-sm transition-all">
-               Todos
-             </button>
-             <button className="px-6 py-2 rounded-full border border-transparent text-brand-600 text-sm font-semibold hover:text-brand-900 hover:bg-white/40 transition-all">
-               Nuevos
-             </button>
-          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
