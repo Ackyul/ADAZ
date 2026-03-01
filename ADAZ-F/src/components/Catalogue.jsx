@@ -13,7 +13,7 @@ const SNEAKERS_DATA = [
 
 const Catalogue = () => {
   return (
-    <section id="destacado" className="py-24 relative bg-brand-50 z-10">
+    <section id="destacado" className="py-24 relative bg-brand-50 z-10 scroll-mt-24">
       {/* Background Decorators */}
       <div className="absolute inset-0 bg-gradient-to-b from-brand-50 via-white/40 to-brand-50 pointer-events-none"></div>
       

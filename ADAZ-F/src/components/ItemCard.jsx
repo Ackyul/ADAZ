@@ -29,7 +29,7 @@ const ItemCard = ({ data }) => {
           {data.name}
         </h3>
         
-        <p className="text-brand-700/90 text-sm mb-6 flex-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0 font-medium">
+        <p className="text-brand-700/90 text-sm mb-6 flex-1 opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 transform font-medium">
           {data.description}
         </p>
         
