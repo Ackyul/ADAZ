@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, ShoppingBag } from 'lucide-react';
 
+const SIZES = [38, 39, 40, 41, 42, 43, 44];
+
 const ProductModal = ({ product, onClose }) => {
+  const [selectedSize, setSelectedSize] = useState(null);
+
   if (!product) return null;
 
   return (
@@ -51,14 +55,42 @@ const ProductModal = ({ product, onClose }) => {
             {product.description}
           </p>
           
-          <div className="mb-8 p-5 bg-brand-50 border border-brand-200 rounded-2xl flex items-center gap-4 text-brand-800 font-medium">
-             <span className="text-xl">📏</span> 
-             <span>Aquí próximamente seleccionarán las tallas.</span>
+          {/* Size Selector */}
+          <div className="mb-8">
+            <h4 className="text-brand-900 font-bold mb-4 flex items-center justify-between">
+              <span>Selecciona tu talla (EU)</span>
+              <span className="text-brand-600 font-medium text-sm underline cursor-pointer hover:text-brand-900">Guía de tallas</span>
+            </h4>
+            <div className="flex flex-wrap gap-3">
+              {SIZES.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`w-12 h-12 rounded-xl border-2 flex items-center justify-center font-bold text-lg transition-all ${
+                    selectedSize === size
+                      ? 'border-brand-900 bg-brand-900 text-white shadow-md transform -translate-y-1'
+                      : 'border-brand-200 bg-white text-brand-700 hover:border-brand-400 hover:bg-brand-50'
+                  }`}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+            {!selectedSize && (
+               <p className="text-sm text-red-500 font-medium mt-3 opacity-80">* Por favor selecciona una talla</p>
+            )}
           </div>
 
-          <button className="w-full bg-brand-900 text-white flex items-center justify-center gap-3 py-5 rounded-full font-bold text-lg hover:bg-brand-800 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <button 
+            className={`w-full text-white flex items-center justify-center gap-3 py-5 rounded-full font-bold text-lg transition-all transform ${
+              selectedSize 
+                ? 'bg-brand-900 hover:bg-brand-800 shadow-lg hover:shadow-xl hover:-translate-y-1' 
+                : 'bg-brand-300 cursor-not-allowed opacity-70'
+            }`}
+            disabled={!selectedSize}
+          >
             <ShoppingBag size={20} />
-            Añadir a la Bolsa
+            {selectedSize ? 'Añadir a la Bolsa' : 'Elige una Talla'}
           </button>
         </div>
 
