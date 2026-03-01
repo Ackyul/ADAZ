@@ -69,17 +69,19 @@ const ProductModal = ({ product, onClose }) => {
           <div className="mb-8">
             <h4 className="text-brand-900 font-bold mb-4 flex items-center justify-between">
               <span>Selecciona tu talla (EU)</span>
-              <span className="text-brand-600 font-medium text-sm underline cursor-pointer hover:text-brand-900">Guía de tallas</span>
             </h4>
             <div className="flex flex-wrap gap-3">
               {SIZES.map((size) => (
                 <button
                   key={size}
-                  onClick={() => setSelectedSize(size)}
+                  onClick={() => size === 40 && setSelectedSize(size)}
+                  disabled={size !== 40}
                   className={`w-12 h-12 rounded-xl border-2 flex items-center justify-center font-bold text-lg transition-all ${
-                    selectedSize === size
-                      ? 'border-brand-900 bg-brand-900 text-white shadow-md transform -translate-y-1'
-                      : 'border-brand-200 bg-white text-brand-700 hover:border-brand-400 hover:bg-brand-50'
+                    size !== 40 
+                      ? 'border-brand-200 bg-brand-50 text-brand-300 cursor-not-allowed opacity-50 relative overflow-hidden before:absolute before:inset-0 before:border-b-2 before:border-brand-200 before:rotate-45 before:-translate-y-1'
+                      : selectedSize === size
+                        ? 'border-brand-900 bg-brand-900 text-white shadow-md transform -translate-y-1'
+                        : 'border-brand-200 bg-white text-brand-700 hover:border-brand-400 hover:bg-brand-50 cursor-pointer'
                   }`}
                 >
                   {size}
