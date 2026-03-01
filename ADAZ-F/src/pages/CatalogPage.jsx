@@ -6,7 +6,7 @@ import ProductModal from '../components/ProductModal';
 const SNEAKERS_DATA = [
   {
     id: 1,
-    name: 'Vans Asher',
+    name: 'ASHER-W',
     category: 'Skate Classic',
     description: 'El icónico diseño a cuadros. Estilo indiscutible y comodidad para todo el día.',
     image: '/assets/vans-asher.png',
