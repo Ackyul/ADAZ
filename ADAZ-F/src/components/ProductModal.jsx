@@ -19,6 +19,9 @@ const ProductModal = ({ product, onClose }) => {
 
   if (!product) return null;
 
+  const currentImage = selectedGender === 'MN' ? '/assets/asher-m.png' : '/assets/vans-asher.png';
+  const currentName = selectedGender === 'MN' ? 'ASHER-M' : 'ASHER-W';
+
   const modalContent = (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Backdrop */}
@@ -42,8 +45,8 @@ const ProductModal = ({ product, onClose }) => {
         <div className="w-full md:w-1/2 bg-brand-100/30 p-6 md:p-8 flex items-center justify-center relative min-h-[220px] md:min-h-[300px] flex-shrink-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-200),transparent_70%)] opacity-60 z-0 mix-blend-multiply"></div>
           <img 
-            src={product.image} 
-            alt={product.name} 
+            src={currentImage} 
+            alt={currentName} 
             className="relative z-10 w-full h-auto max-h-[180px] md:max-h-full object-contain drop-shadow-[0_20px_25px_rgba(15,43,77,0.2)]" 
           />
         </div>
@@ -54,7 +57,7 @@ const ProductModal = ({ product, onClose }) => {
             {product.category}
           </p>
           <h2 className="text-3xl md:text-5xl font-black text-brand-900 mb-2 tracking-tight">
-            {product.name}
+            {currentName}
           </h2>
           
           <div className="text-3xl md:text-4xl font-black text-brand-900 mb-4 flex items-start gap-1">
