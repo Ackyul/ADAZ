@@ -27,7 +27,7 @@ const ProductModal = ({ product, onClose }) => {
       ></div>
       
       {/* Modal Container */}
-      <div className="relative bg-white rounded-[2rem] overflow-hidden w-full max-w-4xl shadow-2xl flex flex-col md:flex-row transform transition-all max-h-[90vh]">
+      <div className="relative bg-white rounded-[2rem] overflow-hidden w-full max-w-[95%] md:max-w-5xl lg:max-w-6xl shadow-2xl flex flex-col md:flex-row transform transition-all max-h-[90vh]">
         
         {/* Close Button */}
         <button 
