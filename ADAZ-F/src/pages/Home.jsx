@@ -21,7 +21,7 @@ const Home = () => {
                     <p className="text-brand-700 text-sm font-semibold tracking-widest uppercase">Únete a la vanguardia</p>
                   </div>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-black tracking-tighter leading-[1.1] mb-8 drop-shadow-sm text-brand-900 uppercase">
+                  <h1 className="text-5xl md:text-7xl lg:text-7xl xl:text-[5.5rem] font-black tracking-tighter leading-[1.1] mb-8 drop-shadow-sm text-brand-900 uppercase">
                       Versatilidad y vanguardismo, <br/>
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-900 via-brand-600 to-brand-800">sin reglas</span>
                   </h1>
