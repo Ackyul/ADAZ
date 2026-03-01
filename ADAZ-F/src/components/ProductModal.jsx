@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShoppingBag } from 'lucide-react';
 
-const SIZES = [38, 39, 40, 41, 42, 43, 44];
+const SIZES_MN = [39, 40, 41, 42, 43, 44];
+const SIZES_WM = [35, 36, 37, 38, 39, 40];
 
 const ProductModal = ({ product, onClose }) => {
+  const [selectedGender, setSelectedGender] = useState('MN');
 
   useEffect(() => {
     if (product) {
@@ -64,17 +66,46 @@ const ProductModal = ({ product, onClose }) => {
             {product.description}
           </p>
           
+          {/* Gender Selector */}
+          <div className="mb-6">
+            <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
+              <span>Género</span>
+            </h4>
+            <div className="inline-flex bg-brand-50 p-1.5 rounded-full border border-brand-200 shadow-inner">
+              <button
+                onClick={() => setSelectedGender('MN')}
+                className={`flex-1 px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                  selectedGender === 'MN' 
+                    ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
+                    : 'text-brand-600 hover:text-brand-900 transparent'
+                }`}
+              >
+                MN
+              </button>
+              <button
+                onClick={() => setSelectedGender('WM')}
+                className={`flex-1 px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                  selectedGender === 'WM' 
+                    ? 'bg-white text-brand-900 shadow-sm border border-brand-200' 
+                    : 'text-brand-600 hover:text-brand-900 transparent'
+                }`}
+              >
+                WM
+              </button>
+            </div>
+          </div>
+          
           {/* Size Selector */}
           <div className="mb-4">
             <h4 className="text-brand-900 font-bold mb-3 flex items-center justify-between text-sm md:text-base">
               <span>Selecciona tu talla (EU)</span>
             </h4>
             <div className="flex flex-wrap gap-2 md:gap-3">
-              {SIZES.map((size) => (
+              {(selectedGender === 'MN' ? SIZES_MN : SIZES_WM).map((size) => (
                 <div
                   key={size}
                   className={`w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 flex items-center justify-center font-bold text-base md:text-lg ${
-                    size !== 40 
+                    !(size === 40 && selectedGender === 'WM')
                       ? 'border-brand-200 bg-brand-50 text-brand-300 opacity-50 relative overflow-hidden before:absolute before:inset-0 before:border-b-2 before:border-brand-200 before:rotate-45 before:-translate-y-1'
                       : 'border-brand-900 bg-brand-900 text-white shadow-md'
                   }`}
